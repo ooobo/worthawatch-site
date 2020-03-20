@@ -64,7 +64,7 @@ export function tmrw () {
 const Header = () => (
   <div>
     <div class='flex center flex-column header'>
-      <h1 class={style.title}>&nbsp;Worth a watch?&nbsp;</h1>
+      <h1 class={style.title}>Worth a watch?</h1>
       <date class={style.date}>
       <a href={yday()} class={style.arrow}>&larr;</a>
       <input type='date' id='date' name='date' class={style.dateinput} value={today()} />
