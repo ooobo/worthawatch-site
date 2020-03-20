@@ -39,7 +39,7 @@ export default function loadResults () {
 
   // local dev
   // return fetch(`http://localhost:8081/fetch-scores.json`)
-  // return fetch(`https://cors-anywhere.herokuapp.com/http://worthawatch.today/.netlify/functions/fetch-scores?date=${getDate()}`)
-   return fetch(`/.netlify/functions/fetch-scores?date=${getDate()}`)
+   return fetch(`https://cors-anywhere.herokuapp.com/http://worthawatch.today/.netlify/functions/fetch-scores?date=${getDate()}`)
+  // return fetch(`/.netlify/functions/fetch-scores?date=${getDate()}`)
     .then(res => res.json())
 }
