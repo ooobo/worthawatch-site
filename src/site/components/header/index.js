@@ -26,7 +26,8 @@ export function parseQuery (qstr) {
 
 export function today () {
   let qdate = new Date();
-  if (window.location.search) {
+  if (typeof window !== "undefined" ) {
+    if (window.location.search) {
     let qs = parseQuery(window.location.search);
     if (qs.date) {
       qs.date = validate(qs.date);
@@ -35,10 +36,12 @@ export function today () {
   } else {qdate = new Date(qdate.setDate(qdate.getDate()))}
   return `${qdate.getFullYear()}-${zeroPad(qdate.getMonth() + 1)}-${zeroPad(qdate.getDate())}`
 }
+}
 
 export function yday () {
   let qdate = new Date();
-  if (window.location.search) {
+  if (typeof window !== "undefined" ) {
+    if (window.location.search) {
     let qs = parseQuery(window.location.search);
     if (qs.date) {
       qs.date = validate(qs.date);
@@ -47,10 +50,12 @@ export function yday () {
   } else {qdate = new Date(qdate.setDate(qdate.getDate() - 1));}
   return `?date=${qdate.getFullYear()}${zeroPad(qdate.getMonth() + 1)}${zeroPad(qdate.getDate())}`
 }
+}
 
 export function tmrw () {
   let qdate = new Date();
-  if (window.location.search) {
+  if (typeof window !== "undefined" ) {
+    if (window.location.search) {
     let qs = parseQuery(window.location.search);
     if (qs.date) {
       qs.date = validate(qs.date);
@@ -59,6 +64,7 @@ export function tmrw () {
     }
   } else {qdate = new Date(qdate.setDate(qdate.getDate() + 1));}
   return `?date=${qdate.getFullYear()}${zeroPad(qdate.getMonth() + 1)}${zeroPad(qdate.getDate())}`
+}
 }
 
 const Header = () => (
