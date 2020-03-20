@@ -3,6 +3,7 @@ import style from './style'
 
 
 export function validate(str) {
+    var str = str.replace(/\D/g,'');
     var y = str.substr(0,4),
         m = str.substr(4,2) - 1,
         d = str.substr(6,2);
@@ -59,8 +60,7 @@ export function tmrw () {
     let qs = parseQuery(window.location.search);
     if (qs.date) {
       qs.date = validate(qs.date);
-      qdate = new Date(qs.date.setDate(qs.date.getDate() + 1));
-      
+      qdate = new Date(qs.date.setDate(qs.date.getDate() + 1));    
     }
   } else {qdate = new Date(qdate.setDate(qdate.getDate() + 1));}
   return `?date=${qdate.getFullYear()}${zeroPad(qdate.getMonth() + 1)}${zeroPad(qdate.getDate())}`
@@ -73,7 +73,10 @@ const Header = () => (
       <h1 class={style.title}>Worth a watch?</h1>
       <date class={style.date}>
       <a href={yday()} class={style.arrow}>&larr;</a>
+      <form>
       <input type='date' id='date' name='date' class={style.dateinput} value={today()} />
+      <input type='submit' value='go' class={style.datesubmit} />
+      </form>
       <a href={tmrw()} class={style.arrow}>&rarr;</a>
       
       </date>

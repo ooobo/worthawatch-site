@@ -25,6 +25,7 @@ function getDate () {
   if (window.location.search) {
     let qs = parseQuery(window.location.search)
     if (qs.date) {
+      qs.date = qs.date.replace(/\D/g,'');
       return qs.date
     }
   }
@@ -38,6 +39,7 @@ export default function loadResults () {
 
   // local dev
   // return fetch(`http://localhost:8081/fetch-scores.json`)
-  return fetch(`https://cors-anywhere.herokuapp.com/http://worthawatch.today/.netlify/functions/fetch-scores?date=${getDate()}`)
+  // return fetch(`https://cors-anywhere.herokuapp.com/http://worthawatch.today/.netlify/functions/fetch-scores?date=${getDate()}`)
+   return fetch(`/.netlify/functions/fetch-scores?date=${getDate()}`)
     .then(res => res.json())
 }
