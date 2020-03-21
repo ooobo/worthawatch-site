@@ -1,5 +1,10 @@
-Thanks to @ianfeather, I've just added some arrows and a datepicker.
+Thanks to @ianfeather, I've just added some arrows and a datepicker. Visit http://ooobo.netlify.com
 
+## TODO
+- [x] Add date selector
+- [ ] Confirm date on screen corresponds to watch.nba.com date
+- [ ] Get own AWS and fetcher working
+- [ ] Link to game
 
 # ORIGINAL README
 
